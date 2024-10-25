@@ -6,7 +6,9 @@
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
+    nix-homebrew.inputs.nixpkgs.follows = "nixpkgs";
     rust-overlay.url = "github:oxalica/rust-overlay";
+    rust-overlay.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew, rust-overlay }:
@@ -14,69 +16,67 @@
       configuration = { pkgs, ... }: {
         # List packages installed in system profile. To search by name, run:
         # $ nix-env -qaP | grep wget
-        environment.systemPackages =
-          [
-            pkgs.neovim
-            pkgs.tmux
-            pkgs.go
-            pkgs.elixir
-            pkgs.starship
-            pkgs.git
-            pkgs.delta
-            pkgs.fnm
-            pkgs.fzf
-            pkgs.eza
-            pkgs.htop
-            pkgs.nano
-            pkgs.mkcert
-            pkgs.jq
-            pkgs.wget
-            pkgs.zoxide
-            pkgs.zellij
-            pkgs.ripgrep
-            pkgs.lazygit
-            pkgs.python3
-            pkgs.rust-bin.stable.latest.default
-          ];
+        environment.systemPackages = with pkgs; [
+          nixfmt
+          nixd
+          neovim
+          tmux
+          go
+          elixir
+          starship
+          git
+          delta
+          fnm
+          fzf
+          eza
+          htop
+          nano
+          mkcert
+          jq
+          wget
+          zoxide
+          zellij
+          ripgrep
+          lazygit
+          python3
+          rust-bin.stable.latest.default
+        ];
 
         fonts = {
-          packages = [
-            pkgs.jetbrains-mono
-            (pkgs.nerdfonts.override {
-              fonts = [ "JetBrainsMono" ];
-            })
+          packages = with pkgs; [
+            jetbrains-mono
+            (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
           ];
         };
 
-        homebrew =
-          {
-            enable = true;
-            brews = [ ];
-            casks = [
-              "1password@7"
-              "alacritty"
-              "kitty"
-              "meetingbar"
-              "orbstack"
-              "setapp"
-              "virtualbox@beta"
-              "yaak"
-              "adobe-acrobat-reader"
-              "firefox"
-              "languagetool"
-              "mockoon"
-              "rectangle"
-              "sublime-text"
-              "visual-studio-code"
-              "zed"
-            ];
+        homebrew = {
+          enable = true;
+          brews = [ ];
+          casks = [
+            "1password@7"
+            "alacritty"
+            "kitty"
+            "meetingbar"
+            "orbstack"
+            "setapp"
+            "virtualbox@beta"
+            "yaak"
+            "adobe-acrobat-reader"
+            "firefox"
+            "languagetool"
+            "mockoon"
+            "rectangle"
+            "sublime-text"
+            "visual-studio-code"
+            "zed"
+          ];
 
-            onActivation = {
-              autoUpdate = true;
-              upgrade = true;
-              cleanup = "zap";
-            };
+          onActivation = {
+            autoUpdate = true;
+            upgrade = true;
+            cleanup = "zap";
           };
+        };
 
         security.pam.enableSudoTouchIdAuth = true;
 
@@ -105,6 +105,7 @@
           settings = {
             "extra-experimental-features" = [ "nix-command" "flakes" ];
           };
+          nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
         };
 
         # Necessary for using flakes on this system.
@@ -127,8 +128,7 @@
           hostPlatform = "aarch64-darwin";
         };
       };
-    in
-    {
+    in {
       # Build darwin flake using:
       # $ darwin-rebuild build --flake .#mac
       darwinConfigurations."mac" = nix-darwin.lib.darwinSystem {
