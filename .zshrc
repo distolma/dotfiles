@@ -1,6 +1,6 @@
 # Brew
-# eval $(/opt/homebrew/bin/brew shellenv)
-# export PATH="/opt/homebrew/bin:${PATH}"
+eval $(/opt/homebrew/bin/brew shellenv)
+export PATH="/opt/homebrew/bin:${PATH}"
 
 # History
 HISTSIZE=10000

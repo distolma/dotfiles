@@ -51,7 +51,7 @@
 
         homebrew = {
           enable = true;
-          brews = [ ];
+          brews = [ "zig" "gleam" ];
           casks = [
             "1password@7"
             "alacritty"
