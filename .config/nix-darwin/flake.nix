@@ -22,6 +22,7 @@
           neovim
           tmux
           go
+          tinygo
           elixir
           starship
           git
@@ -43,10 +44,7 @@
         ];
 
         fonts = {
-          packages = with pkgs; [
-            jetbrains-mono
-            (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
-          ];
+          packages = with pkgs; [ jetbrains-mono nerd-fonts.jetbrains-mono ];
         };
 
         homebrew = {
@@ -69,6 +67,8 @@
             "sublime-text"
             "visual-studio-code"
             "zed"
+            "moonlight"
+            "nvidia-geforce-now"
           ];
 
           onActivation = {
