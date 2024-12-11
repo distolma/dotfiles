@@ -41,6 +41,7 @@
           lazygit
           python3
           rust-bin.stable.latest.default
+          pnpm
         ];
 
         fonts = {
@@ -88,7 +89,7 @@
               mru-spaces = false;
               static-only = true;
               show-recents = false;
-              expose-group-by-app = false;
+              expose-group-apps = false;
             };
             finder = {
               AppleShowAllFiles = true;
