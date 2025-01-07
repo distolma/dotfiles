@@ -42,6 +42,9 @@
           python3
           rust-bin.stable.latest.default
           pnpm
+          bun
+          deno
+          zig
         ];
 
         fonts = {
@@ -50,11 +53,10 @@
 
         homebrew = {
           enable = true;
-          brews = [ "zig" "gleam" ];
+          brews = [ "gleam" ];
           casks = [
             "1password@7"
             "alacritty"
-            "kitty"
             "meetingbar"
             "orbstack"
             "setapp"
@@ -70,6 +72,7 @@
             "zed"
             "moonlight"
             "nvidia-geforce-now"
+            "ghostty"
           ];
 
           onActivation = {
@@ -155,4 +158,3 @@
       darwinPackages = self.darwinConfigurations."mac".pkgs;
     };
 }
-
