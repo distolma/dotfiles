@@ -14,9 +14,12 @@
   outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew, rust-overlay }:
     let
       configuration = { pkgs, ... }: {
+        nixpkgs.config.allowUnfree = true;
+
         # List packages installed in system profile. To search by name, run:
         # $ nix-env -qaP | grep wget
         environment.systemPackages = with pkgs; [
+          _1password-cli
           nixfmt
           nixd
           neovim
@@ -39,12 +42,14 @@
           zellij
           ripgrep
           lazygit
-          python3
+          lazydocker
           rust-bin.stable.latest.default
           pnpm
           bun
           deno
           zig
+          uv
+          curlie
         ];
 
         fonts = {
@@ -56,7 +61,6 @@
           brews = [ "gleam" ];
           casks = [
             "1password@7"
-            "alacritty"
             "meetingbar"
             "orbstack"
             "setapp"
@@ -70,10 +74,10 @@
             "sublime-text"
             "visual-studio-code"
             "zed"
-            "moonlight"
             "nvidia-geforce-now"
             "ghostty"
           ];
+          masApps = { "nordvpn" = 905953485; };
 
           onActivation = {
             autoUpdate = true;
