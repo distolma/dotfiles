@@ -10,7 +10,7 @@ sh <(curl -L https://nixos.org/nix/install)
 3. Stow config files using Nix packages
 
 ```sh
-nix run "nixpckg#stow" .
+nix run nixpkgs#stow .
 ```
 
 4. Install [nix-darwin](https://github.com/LnL7/nix-darwin)
