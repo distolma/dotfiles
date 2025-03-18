@@ -2,13 +2,17 @@
   description = "Dima's Darwin system flake";
 
   inputs = {
+    # Nix package sources
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    rust-overlay.url = "github:oxalica/rust-overlay";
+
+    # Darwin specific inputs
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+
+    # Homebrew inputs
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
     nix-homebrew.inputs.nixpkgs.follows = "nixpkgs";
-    rust-overlay.url = "github:oxalica/rust-overlay";
-    rust-overlay.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
@@ -29,65 +33,70 @@
           # $ nix-env -qaP | grep wget
           environment.systemPackages = with pkgs; [
             _1password-cli
-            nixfmt-rfc-style
-            nixd
-            neovim
-            tmux
-            go
-            tinygo
-            elixir
-            starship
-            git
+            bun
+            curlie
             delta
+            deno
+            elixir
+            eza
+            fd
+            fish
             fnm
             fzf
-            eza
+            git
+            gleam
+            go
             htop
-            nano
-            mkcert
             jq
-            wget
-            zoxide
-            zellij
-            ripgrep
-            lazygit
             lazydocker
-            rust-bin.stable.latest.default
+            lazygit
+            mkcert
+            nano
+            neovim
+            nixd
+            nixfmt-rfc-style
             pnpm
-            bun
-            deno
-            zig
+            ripgrep
+            rust-bin.stable.latest.default
+            starship
+            tinygo
+            tmux
             uv
-            curlie
+            wget
+            zellij
+            zoxide
           ];
 
           fonts = {
             packages = with pkgs; [
-              jetbrains-mono
               nerd-fonts.jetbrains-mono
+              jetbrains-mono
             ];
           };
 
           homebrew = {
             enable = true;
-            brews = [ "gleam" ];
+            taps = [ "sdkman/tap" ];
+            brews = [ "sdkman/tap/sdkman-cli" ];
             casks = [
               "1password@7"
-              "meetingbar"
-              "orbstack"
-              "setapp"
-              "virtualbox@beta"
-              "yaak"
-              "adobe-acrobat-reader"
               "firefox"
-              "languagetool"
-              "mockoon"
-              "rectangle"
-              "sublime-text"
-              "visual-studio-code"
-              "zed"
-              "nvidia-geforce-now"
               "ghostty"
+              "languagetool"
+              "meetingbar"
+              "mockoon"
+              "nvidia-geforce-now"
+              "orbstack"
+              "protonvpn"
+              "rectangle"
+              "setapp"
+              "sublime-text"
+              "virtualbox"
+              "visual-studio-code"
+              "yaak"
+              "zed"
+              "zen-browser"
+              "keymapp"
             ];
             masApps = {
               "nordvpn" = 905953485;
@@ -100,7 +109,7 @@
             };
           };
 
-          security.pam.enableSudoTouchIdAuth = true;
+          security.pam.services.sudo_local.touchIdAuth = true;
 
           system = {
             defaults = {
@@ -121,8 +130,9 @@
           };
 
           # Auto upgrade nix package and the daemon service.
-          services.nix-daemon.enable = true;
+          # services.nix-daemon.enable = true;
           nix = {
+            enable = true;
             package = pkgs.nix;
             settings = {
               "extra-experimental-features" = [
@@ -138,7 +148,7 @@
 
           # Create /etc/zshrc that loads the nix-darwin environment.
           programs.zsh.enable = true; # default shell on catalina
-          # programs.fish.enable = true;
+          programs.fish.enable = false;
 
           # Set Git commit hash for darwin-version.
           system.configurationRevision = self.rev or self.dirtyRev or null;
