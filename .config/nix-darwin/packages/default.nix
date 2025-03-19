@@ -16,6 +16,7 @@
     fnm
     fzf
     git
+    gleam
     go
     htop
     jq
@@ -41,7 +42,8 @@
 
   homebrew = {
     enable = true;
-    brews = [ "gleam" ];
+    taps = [ "sdkman/tap" ];
+    brews = [ "sdkman/tap/sdkman-cli" ];
     casks = [
       "1password@7"
       "firefox"
