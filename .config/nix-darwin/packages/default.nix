@@ -1,8 +1,13 @@
 {
   pkgs,
+  username,
   ...
 }:
 {
+  imports = [
+    ./${username}
+  ];
+
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
@@ -13,6 +18,7 @@
     deno
     elixir
     eza
+    fd
     fnm
     fzf
     git
@@ -42,16 +48,11 @@
 
   homebrew = {
     enable = true;
-    taps = [ "sdkman/tap" ];
-    brews = [ "sdkman/tap/sdkman-cli" ];
     casks = [
       "1password@7"
       "firefox"
       "ghostty"
       "keymapp"
-      "languagetool"
-      "meetingbar"
-      "mockoon"
       "nvidia-geforce-now"
       "orbstack"
       "protonvpn"
@@ -60,7 +61,6 @@
       "sublime-text"
       "virtualbox"
       "visual-studio-code"
-      "yaak"
       "zed"
     ];
     masApps = {

@@ -9,6 +9,7 @@
 {
   imports = [
     inputs.nix-homebrew.darwinModules.nix-homebrew
+    ./${username}
   ];
 
   nixpkgs.config.allowUnfree = true;
