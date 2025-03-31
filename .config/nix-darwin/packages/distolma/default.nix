@@ -1,7 +1,1 @@
-_: {
-  homebrew = {
-    casks = [
-      "grammarly-desktop"
-    ];
-  };
-}
+_: { }
