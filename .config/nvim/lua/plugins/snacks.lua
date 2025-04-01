@@ -5,9 +5,11 @@ return {
   ---@type snacks.Config
   opts = {
     picker = {
-      sources = { explorer = {
-        layout = { layout = { position = "right" } },
-      } },
+      sources = {
+        explorer = {
+          layout = { layout = { position = "right" } },
+        },
+      },
     },
   },
 }

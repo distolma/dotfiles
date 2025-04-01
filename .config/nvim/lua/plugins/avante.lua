@@ -1,18 +1,15 @@
 return {
   "yetone/avante.nvim",
   event = "VeryLazy",
-  lazy = false,
   version = false,
   build = "make",
   opts = {
-    provider = "claude",
+    provider = "gemini",
     gemini = {
-      model = "gemini-2.0-flash",
+      model = "gemini-2.5-pro-exp-03-25",
     },
-  },
-  dependencies = {
-    "nvim-lua/plenary.nvim",
-    "echasnovski/mini.icons",
-    "stevearc/dressing.nvim",
+    file_selector = {
+      provider = "snacks",
+    },
   },
 }
