@@ -57,15 +57,12 @@
       "orbstack"
       "protonvpn"
       "rectangle"
-      "setapp"
       "sublime-text"
       "virtualbox"
       "visual-studio-code"
       "zed"
     ];
-    masApps = {
-      "nordvpn" = 905953485;
-    };
+    masApps = { };
 
     onActivation = {
       autoUpdate = true;
