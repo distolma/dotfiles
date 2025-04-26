@@ -1,1 +1,7 @@
-_: { }
+_: {
+  homebrew = {
+    casks = [
+      "balenaetcher"
+    ];
+  };
+}
