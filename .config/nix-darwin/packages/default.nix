@@ -58,7 +58,6 @@
       "protonvpn"
       "rectangle"
       "sublime-text"
-      "virtualbox"
       "visual-studio-code"
       "zed"
     ];
