@@ -5,11 +5,39 @@ return {
   build = "make",
   opts = {
     provider = "gemini",
-    gemini = {
-      model = "gemini-2.5-pro-exp-03-25",
+    providers = {
+      gemini = {
+        model = "gemini-2.5-pro-preview-05-06",
+      },
     },
     file_selector = {
       provider = "snacks",
+    },
+  },
+  dependencies = {
+    "nvim-treesitter/nvim-treesitter",
+    { "stevearc/dressing.nvim", optional = true },
+    "nvim-lua/plenary.nvim",
+    "MunifTanjim/nui.nvim",
+  },
+  specs = {
+    {
+      "Kaiser-Yang/blink-cmp-avante",
+      lazy = true,
+      specs = {
+        {
+          "Saghen/blink.cmp",
+          optional = true,
+          opts = {
+            sources = {
+              default = { "avante" },
+              providers = {
+                avante = { module = "blink-cmp-avante", name = "Avante" },
+              },
+            },
+          },
+        },
+      },
     },
   },
 }
