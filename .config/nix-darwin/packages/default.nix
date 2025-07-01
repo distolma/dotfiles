@@ -54,7 +54,6 @@
       "ghostty"
       "keymapp"
       "nvidia-geforce-now"
-      "orbstack"
       "protonvpn"
       "rectangle"
       "sublime-text"
