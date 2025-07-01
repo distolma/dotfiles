@@ -4,7 +4,7 @@ _: {
     brews = [ "sdkman/tap/sdkman-cli" ];
     casks = [
       "docker-desktop"
-      "languagetool"
+      "languagetool-desktop"
       "meetingbar"
       "mockoon"
     ];
