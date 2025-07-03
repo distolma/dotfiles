@@ -48,6 +48,12 @@
 
   homebrew = {
     enable = true;
+    brews = [
+      "sst/tap/opencode"
+    ];
+    taps = [
+      "sst/tap"
+    ];
     casks = [
       "1password@7"
       "firefox"
