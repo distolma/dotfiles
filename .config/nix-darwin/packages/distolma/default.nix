@@ -3,6 +3,7 @@ _: {
     casks = [
       "balenaetcher"
       "orbstack"
+      "tailscale"
       "virtualbox"
     ];
   };
