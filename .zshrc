@@ -43,3 +43,23 @@ eval "$(fnm env --use-on-cd)"
 firedep() {
   npx --yes firebase-tools hosting:channel:deploy $1
 }
+
+op_load_secrets() {
+  local template="$HOME/.config/zsh/secrets.template"
+  local secrets="$HOME/.config/zsh/secrets.zsh"
+
+  # If secrets.zsh does not exist, create it
+  if [ ! -f $secrets ]; then
+    # Check if signed in
+    if ! op whoami &> /dev/null; then
+      echo "Signing in to 1Password..." >&2
+      eval $(op signin)
+    fi
+
+    echo "Getting secrets..."
+    op inject --in-file $template --out-file $secrets
+  fi
+  source $secrets
+}
+
+op_load_secrets
