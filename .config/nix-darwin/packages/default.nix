@@ -59,11 +59,11 @@
       "firefox"
       "ghostty"
       "keymapp"
-      "nvidia-geforce-now"
       "protonvpn"
       "rectangle"
       "sublime-text"
       "visual-studio-code"
+      "vlc"
       "zed"
     ];
     masApps = { };
