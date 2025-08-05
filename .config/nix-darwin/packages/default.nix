@@ -22,7 +22,6 @@
     fnm
     fzf
     git
-    gleam
     go
     htop
     jq
