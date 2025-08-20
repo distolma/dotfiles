@@ -21,6 +21,7 @@
     fd
     fnm
     fzf
+    gdu
     git
     go
     htop
@@ -32,6 +33,7 @@
     neovim
     nixd
     nixfmt-rfc-style
+    npkill
     pnpm
     ripgrep
     rust-bin.stable.latest.default
