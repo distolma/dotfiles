@@ -19,7 +19,6 @@
     elixir
     eza
     fd
-    fnm
     fzf
     gdu
     git
@@ -28,6 +27,7 @@
     jq
     lazydocker
     lazygit
+    mise
     mkcert
     nano
     neovim

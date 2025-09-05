@@ -37,8 +37,8 @@ alias brewdeps="brew leaves | xargs brew deps --include-build --tree"
 # zoxide
 eval "$(zoxide init --cmd cd zsh)"
 
-# fnm
-eval "$(fnm env --use-on-cd)"
+#mise
+eval "$(mise activate zsh)"
 
 firedep() {
   npx --yes firebase-tools hosting:channel:deploy $1
