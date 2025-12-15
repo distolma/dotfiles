@@ -13,6 +13,7 @@
   environment.systemPackages = with pkgs; [
     _1password-cli
     bun
+    claude-code
     curlie
     delta
     deno
@@ -21,8 +22,10 @@
     fd
     fzf
     gdu
+    gemini-cli
     git
     go
+    google-cloud-sdk
     htop
     jq
     lazydocker
@@ -34,6 +37,7 @@
     nixd
     nixfmt-rfc-style
     npkill
+    pipx
     pnpm
     ripgrep
     rust-bin.stable.latest.default
@@ -50,10 +54,7 @@
   homebrew = {
     enable = true;
     brews = [
-      "sst/tap/opencode"
-    ];
-    taps = [
-      "sst/tap"
+      "opencode"
     ];
     casks = [
       "1password@7"
