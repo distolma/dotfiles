@@ -1,0 +1,11 @@
+theme "onedark"
+plugins {
+    autolock location="file:~/.config/zellij/plugins/zellij-autolock.wasm" {
+        is_enabled true
+        triggers "nvim|vim|git|fzf|zoxide"
+        reaction_seconds "0.3"
+    }
+}
+load_plugins {
+    autolock
+}
