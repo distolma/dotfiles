@@ -1,5 +1,8 @@
 _: {
   homebrew = {
+    brews = [
+      "awscli"
+    ];
     casks = [
       "deskpad"
       "docker-desktop"

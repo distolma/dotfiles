@@ -13,19 +13,19 @@
   environment.systemPackages = with pkgs; [
     _1password-cli
     bun
-    claude-code
     curlie
     delta
-    deno
     elixir
     eza
     fd
+    fish
     fzf
     gdu
-    gemini-cli
+    gh
     git
     go
     google-cloud-sdk
+    helix
     htop
     jq
     lazydocker
@@ -35,7 +35,7 @@
     nano
     neovim
     nixd
-    nixfmt-rfc-style
+    nixfmt
     npkill
     pipx
     pnpm
@@ -58,12 +58,14 @@
     ];
     casks = [
       "1password@7"
+      "claude-code"
       "firefox"
       "ghostty"
       "keymapp"
       "protonvpn"
       "rectangle"
       "sublime-text"
+      "tablepro"
       "visual-studio-code"
       "vlc"
       "zed"
