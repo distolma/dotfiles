@@ -11,7 +11,10 @@ function op_load_secrets --description 'Inject 1Password secrets and load them i
         end
 
         echo "Getting secrets..."
+        set -l old_umask (umask)
+        umask 077
         op inject --in-file $template --out-file $secrets
+        umask $old_umask
     end
 
     source $secrets
