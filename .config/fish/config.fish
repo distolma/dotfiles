@@ -1,5 +1,6 @@
 # Brew
 /opt/homebrew/bin/brew shellenv fish | source
+set -gx HOMEBREW_NO_UPGRADE_AUTO_UPDATES_CASKS 1
 
 # Editor
 set -gx EDITOR nvim
@@ -8,14 +9,8 @@ set -gx EDITOR nvim
 fish_add_path $HOME/.local/bin
 fish_add_path /run/current-system/sw/bin
 
-# Environment
-set -gx GOOGLE_CLOUD_PROJECT sift-developer-infr
-set -gx CLOUD_ML_REGION global
-set -gx CLAUDE_CODE_USE_VERTEX 1
-set -gx ANTHROPIC_MODEL "claude-sonnet-4-6@default"
-set -gx ANTHROPIC_SMALL_FAST_MODEL "claude-haiku-4-5@20251001"
-set -gx ANTHROPIC_VERTEX_PROJECT_ID sift-developer-infr
-set -gx NODE_EXTRA_CA_CERTS "/Library/Application Support/Netskope/STAgent/data/nscacert.pem"
+# Work related 
+source ~/.config/fish/work.fish 2>/dev/null
 
 # 1Password secrets (loaded in all sessions)
 op_load_secrets
@@ -44,3 +39,7 @@ if status is-interactive
     alias chrome-debug='open -a "Google Chrome" --args --remote-debugging-port=9222'
     alias brewdeps='brew leaves | xargs brew deps --include-build --tree'
 end
+
+# Added by OrbStack: command-line tools and integration
+# This won't be added again if you remove it.
+source ~/.orbstack/shell/init2.fish 2>/dev/null || :
