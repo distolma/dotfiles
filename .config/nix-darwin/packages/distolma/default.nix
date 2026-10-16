@@ -8,6 +8,7 @@ _: {
       "calibre"
       "nvidia-geforce-now"
       "orbstack"
+      "protonvpn"
       "virtualbox"
     ];
   };

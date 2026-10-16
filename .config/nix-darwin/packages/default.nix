@@ -12,10 +12,11 @@
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
     _1password-cli
+    beamPackages.elixir
     bun
+    croc
     curlie
     delta
-    elixir
     eza
     fd
     fish
@@ -26,6 +27,7 @@
     go
     google-cloud-sdk
     helix
+    herdr
     htop
     jq
     lazydocker
@@ -37,7 +39,7 @@
     nixd
     nixfmt
     npkill
-    pipx
+    pi-coding-agent
     pnpm
     ripgrep
     rust-bin.stable.latest.default
@@ -54,18 +56,21 @@
   homebrew = {
     enable = true;
     brews = [
+      "herdr"
+      "mole"
       "opencode"
     ];
     casks = [
-      "1password@7"
+      "1password"
       "claude-code"
+      "wouterdebie/tap/davit"
       "firefox"
       "ghostty"
       "keymapp"
-      "protonvpn"
       "rectangle"
       "sublime-text"
       "tablepro"
+      "whatcable"
       "visual-studio-code"
       "vlc"
       "zed"
@@ -75,7 +80,7 @@
     onActivation = {
       autoUpdate = true;
       upgrade = true;
-      cleanup = "zap";
+      # cleanup = "zap";
     };
   };
 }
