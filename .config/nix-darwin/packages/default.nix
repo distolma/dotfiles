@@ -62,8 +62,8 @@
     ];
     casks = [
       "1password"
+      "android-platform-tools"
       "claude-code"
-      "wouterdebie/tap/davit"
       "firefox"
       "ghostty"
       "keymapp"

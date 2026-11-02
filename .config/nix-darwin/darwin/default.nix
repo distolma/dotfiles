@@ -53,6 +53,16 @@
       ];
     };
     nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
+
+    # Automatic garbage collection: delete generations older than 30 days
+    gc = {
+      automatic = true;
+      interval = { Weekday = 0; Hour = 3; Minute = 0; }; # Sundays at 03:00
+      options = "--delete-older-than 30d";
+    };
+
+    # Hard-link identical files in the store to save space
+    optimise.automatic = true;
   };
 
   nix-homebrew = {
