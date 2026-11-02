@@ -17,70 +17,6 @@
         "type": "github"
       }
     },
-    "homebrew-cask": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1793639979,
-        "narHash": "sha256-58OF/Cbmn32lrT5HCcRaYZAhhZh42rym1k6eq7okpjg=",
-        "owner": "homebrew",
-        "repo": "homebrew-cask",
-        "rev": "419dad877458b213be541c860eed4dad2e86bb1c",
-        "type": "github"
-      },
-      "original": {
-        "owner": "homebrew",
-        "repo": "homebrew-cask",
-        "type": "github"
-      }
-    },
-    "homebrew-core": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1793638661,
-        "narHash": "sha256-n1xpH3CgyfaG0fjFNPtCBSxTe6ttDBLRDWsoN2rE2HQ=",
-        "owner": "homebrew",
-        "repo": "homebrew-core",
-        "rev": "d9f0da31916a087dbdd6471646d7a17f0fa3c155",
-        "type": "github"
-      },
-      "original": {
-        "owner": "homebrew",
-        "repo": "homebrew-core",
-        "type": "github"
-      }
-    },
-    "homebrew-hashicorp": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1793296759,
-        "narHash": "sha256-9oF+janR9zxW8IFPLSqmU8UrvpzAxdLW5+t5LL2SERc=",
-        "owner": "hashicorp",
-        "repo": "homebrew-tap",
-        "rev": "ff9a1cdb100bf0d65967d88cf7439fe536f75af1",
-        "type": "github"
-      },
-      "original": {
-        "owner": "hashicorp",
-        "repo": "homebrew-tap",
-        "type": "github"
-      }
-    },
-    "homebrew-wouterdebie": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1793130463,
-        "narHash": "sha256-IdsTV7ewJQgVsr6r0VTOWg8eTDQw6+uWz3izXHHM80I=",
-        "owner": "wouterdebie",
-        "repo": "homebrew-tap",
-        "rev": "9dcc066f1e32115db1b03a098f66d244b2937c0b",
-        "type": "github"
-      },
-      "original": {
-        "owner": "wouterdebie",
-        "repo": "homebrew-tap",
-        "type": "github"
-      }
-    },
     "nix-darwin": {
       "inputs": {
         "nixpkgs": [
@@ -174,10 +110,6 @@
     },
     "root": {
       "inputs": {
-        "homebrew-cask": "homebrew-cask",
-        "homebrew-core": "homebrew-core",
-        "homebrew-hashicorp": "homebrew-hashicorp",
-        "homebrew-wouterdebie": "homebrew-wouterdebie",
         "nix-darwin": "nix-darwin",
         "nix-darwin-2605": "nix-darwin-2605",
         "nix-homebrew": "nix-homebrew",

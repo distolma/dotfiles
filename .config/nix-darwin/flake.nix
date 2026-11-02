@@ -14,26 +14,6 @@
     nixpkgs-2605.url = "github:NixOS/nixpkgs/nixpkgs-26.05-darwin";
     nix-darwin-2605.url = "github:LnL7/nix-darwin/nix-darwin-26.05";
     nix-darwin-2605.inputs.nixpkgs.follows = "nixpkgs-2605";
-
-    # Pinned Homebrew taps for declarative tap management via nix-homebrew.
-    # Update with `nix flake update`.
-    homebrew-core = {
-      url = "github:homebrew/homebrew-core";
-      flake = false;
-    };
-    homebrew-cask = {
-      url = "github:homebrew/homebrew-cask";
-      flake = false;
-    };
-    homebrew-hashicorp = {
-      url = "github:hashicorp/homebrew-tap";
-      flake = false;
-    };
-    # Provides herdr for the Intel home machine (not in nixpkgs-26.05)
-    homebrew-wouterdebie = {
-      url = "github:wouterdebie/homebrew-tap";
-      flake = false;
-    };
   };
 
   outputs =

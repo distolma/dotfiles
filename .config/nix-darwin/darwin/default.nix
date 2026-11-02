@@ -77,16 +77,6 @@
     # User owning the Homebrew prefix
     user = username;
 
-    # Declared taps are pinned to flake inputs and force-synced on
-    # activation; other taps can still be managed imperatively with
-    # `brew tap` / `brew update`
-    taps = {
-      "homebrew/homebrew-core" = inputs.homebrew-core;
-      "homebrew/homebrew-cask" = inputs.homebrew-cask;
-      "hashicorp/tap" = inputs.homebrew-hashicorp;
-      "wouterdebie/tap" = inputs.homebrew-wouterdebie;
-    };
-
     # Non-official taps require explicit trust
     trust.taps = [
       "hashicorp/tap"
@@ -94,8 +84,12 @@
     ];
   };
 
-  # Align nix-darwin's tap config with nix-homebrew
-  homebrew.taps = builtins.attrNames config.nix-homebrew.taps;
+  # Third-party taps are tapped imperatively on activation;
+  # homebrew-core/cask are served via the Homebrew API (no local taps)
+  homebrew.taps = [
+    "hashicorp/tap"
+    "wouterdebie/tap"
+  ];
 
   # Enable fish and make it the login shell
   programs.fish.enable = true;
