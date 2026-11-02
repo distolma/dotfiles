@@ -1,9 +1,4 @@
-{ pkgs, ... }:
-{
-  # herdr is only packaged in nixpkgs-unstable (work machine).
-  # On the Intel home machine it is installed via brew instead.
-  environment.systemPackages = [ pkgs.herdr ];
-
+_: {
   homebrew = {
     brews = [
       "awscli"

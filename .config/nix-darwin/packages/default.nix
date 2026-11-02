@@ -55,6 +55,9 @@
   homebrew = {
     enable = true;
     brews = [
+      # From wouterdebie/tap; not packaged in nixpkgs-26.05 (Intel machine),
+      # so it is installed via brew on both machines
+      "herdr"
       "mole"
       "opencode"
     ];
