@@ -27,7 +27,6 @@
     go
     google-cloud-sdk
     helix
-    herdr
     htop
     jq
     lazydocker
@@ -56,7 +55,6 @@
   homebrew = {
     enable = true;
     brews = [
-      "herdr"
       "mole"
       "opencode"
     ];

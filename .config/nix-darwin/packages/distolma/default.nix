@@ -1,6 +1,7 @@
 _: {
   homebrew = {
     brews = [
+      "herdr"
       "tailscale"
     ];
     casks = [
