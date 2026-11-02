@@ -77,15 +77,15 @@
     # User owning the Homebrew prefix
     user = username;
 
-    # Declarative tap management: taps are pinned to flake inputs,
-    # imperative `brew tap` is disabled
+    # Declared taps are pinned to flake inputs and force-synced on
+    # activation; other taps can still be managed imperatively with
+    # `brew tap` / `brew update`
     taps = {
       "homebrew/homebrew-core" = inputs.homebrew-core;
       "homebrew/homebrew-cask" = inputs.homebrew-cask;
       "hashicorp/tap" = inputs.homebrew-hashicorp;
       "wouterdebie/tap" = inputs.homebrew-wouterdebie;
     };
-    mutableTaps = false;
 
     # Non-official taps require explicit trust
     trust.taps = [
