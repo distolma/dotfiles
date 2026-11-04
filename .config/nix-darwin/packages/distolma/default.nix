@@ -9,7 +9,6 @@ _: {
       "nvidia-geforce-now"
       "orbstack"
       "protonvpn"
-      "virtualbox"
     ];
   };
 }
