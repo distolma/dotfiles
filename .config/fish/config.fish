@@ -12,8 +12,8 @@ fish_add_path /run/current-system/sw/bin
 # Work related 
 source ~/.config/fish/work.fish 2>/dev/null
 
-# 1Password secrets (loaded in all sessions)
-op_load_secrets
+# Bitwarden secrets (loaded in all sessions)
+bw_load_secrets
 
 if status is-interactive
     # Disable welcome message
@@ -36,6 +36,8 @@ if status is-interactive
     alias l='eza --all'
     alias ll='eza --long --all --git --header --icons --group-directories-first --links'
     alias firefox='/Applications/Firefox.app/Contents/MacOS/firefox'
+    # Trust the local mkcert CA for the vaultwarden server on localhost:8000
+    alias bw='NODE_EXTRA_CA_CERTS=(mkcert -CAROOT)/rootCA.pem command bw'
     alias chrome-debug='open -a "Google Chrome" --args --remote-debugging-port=9222'
     alias brewdeps='brew leaves | xargs brew deps --include-build --tree'
 end
