@@ -10,13 +10,13 @@ sh <(curl -L https://nixos.org/nix/install)
 3. Stow config files using Nix packages
 
 ```sh
-nix run nixpkgs#stow .
+nix --extra-experimental-features "nix-command flakes" run nixpkgs#stow .
 ```
 
 4. Install [nix-darwin](https://github.com/LnL7/nix-darwin)
 
 ```sh
-nix run nix-darwin -- switch --flake ~/.config/nix-darwin
+nix --extra-experimental-features "nix-command flakes" run nix-darwin -- switch --flake ~/.config/nix-darwin
 ```
 
 5. Use `nix-darwin`
