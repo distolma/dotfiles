@@ -1,7 +1,6 @@
 _: {
   homebrew = {
     brews = [
-      "tailscale"
       "herdr"
       "opencode"
     ];
@@ -12,6 +11,7 @@ _: {
       "nvidia-geforce-now"
       "orbstack"
       "protonvpn"
+      "tailscale-app"
       "whatcable"
     ];
   };
