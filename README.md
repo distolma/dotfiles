@@ -15,12 +15,16 @@ nix --extra-experimental-features "nix-command flakes" run nixpkgs#stow .
 
 4. Install [nix-darwin](https://github.com/LnL7/nix-darwin)
 
+The flake defines two configurations: `work` and `home`. Pass the
+matching one as `#<name>`. Without it, nix-darwin falls back to the
+hostname and fails.
+
 ```sh
-nix --extra-experimental-features "nix-command flakes" run nix-darwin -- switch --flake ~/.config/nix-darwin
+nix --extra-experimental-features "nix-command flakes" run nix-darwin -- switch --flake ~/.config/nix-darwin#home
 ```
 
 5. Use `nix-darwin`
 
 ```sh
-darwin-rebuild switch --flake ~/.config/nix-darwin
+darwin-rebuild switch --flake ~/.config/nix-darwin#home
 ```
