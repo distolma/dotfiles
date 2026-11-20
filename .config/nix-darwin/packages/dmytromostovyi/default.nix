@@ -7,6 +7,7 @@ _: {
     ];
     casks = [
       "balenaetcher"
+      "bitwarden"
       "calibre"
       "nvidia-geforce-now"
       "orbstack"

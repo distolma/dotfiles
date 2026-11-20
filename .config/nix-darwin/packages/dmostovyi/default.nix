@@ -5,6 +5,7 @@ _: {
       "hashicorp/tap/vault"
     ];
     casks = [
+      "bitwarden"
       "claude"
       "deskpad"
       "figma"
