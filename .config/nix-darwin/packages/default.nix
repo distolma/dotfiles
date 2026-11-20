@@ -11,8 +11,8 @@
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
-    _1password-cli
     beamPackages.elixir
+    bitwarden-cli
     bun
     croc
     curlie
@@ -55,7 +55,7 @@
   homebrew = {
     enable = true;
     brews = [
-      # Not packaged in nixpkgs-26.05 (Intel machine),
+      # From wouterdebie/tap; not packaged in nixpkgs,
       # so it is installed via brew on both machines
       "mole"
     ];
