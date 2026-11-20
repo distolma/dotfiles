@@ -3,9 +3,6 @@ _: {
     brews = [
       "awscli"
       "hashicorp/tap/vault"
-      # Apple Silicon only; not installed on the Intel home machine
-      "herdr"
-      "opencode"
     ];
     casks = [
       "claude"
@@ -18,8 +15,6 @@ _: {
       "mockoon"
       "orbstack"
       "postman"
-      # Apple Silicon only; not installed on the Intel home machine
-      "whatcable"
     ];
   };
 }

@@ -46,7 +46,7 @@
           inherit nix-darwin nixpkgs;
         };
         "home" = mkDarwinConfiguration {
-          username = "distolma";
+          username = "dmytromostovyi";
           platform = "aarch64-darwin";
           inherit nix-darwin nixpkgs;
         };
